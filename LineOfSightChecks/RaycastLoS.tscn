@@ -1,0 +1,341 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://LineOfSightChecks/stuff/AgentLoS.tscn" type="PackedScene" id=1]
+[ext_resource path="res://FPSDisplay.tscn" type="PackedScene" id=2]
+
+[sub_resource type="CubeMesh" id=1]
+size = Vector3( 200, 2, 200 )
+
+[sub_resource type="SpatialMaterial" id=2]
+albedo_color = Color( 0.337255, 1, 0.627451, 1 )
+
+[sub_resource type="CubeMesh" id=3]
+
+[sub_resource type="SpatialMaterial" id=4]
+albedo_color = Color( 0, 0.0627451, 1, 1 )
+
+[sub_resource type="ConcavePolygonShape" id=5]
+data = PoolVector3Array( -1, 1, 1, 1, 1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, 1, 1, -1, -1, 1, -1, 1, -1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, -1, 1, -1, -1, 1, 1, -1, -1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, 1, 1, 1, -1, 1, 1, 1, 1, -1, -1, 1, 1, -1, 1, -1, 1, 1, -1, -1, -1, 1, 1, -1, 1, -1, -1, -1, 1, -1, 1, 1, -1, -1, -1, -1, -1 )
+
+[sub_resource type="CapsuleMesh" id=6]
+
+[sub_resource type="SpatialMaterial" id=7]
+albedo_color = Color( 0.968627, 0.00392157, 1, 1 )
+
+[sub_resource type="Animation" id=8]
+resource_name = "move"
+length = 8.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Target:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 2, 3, 4, 5, 6, 7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( -84, 0, 0 ), Vector3( -63.7084, 0, -79.6906 ), Vector3( 37.2576, 0, -53.1271 ), Vector3( 75.5042, 0, -78.9527 ), Vector3( 79.0214, 0, -57.997 ), Vector3( 86.9659, 0, -1.80779 ), Vector3( 72.4371, 0, 58.6688 ), Vector3( -2.09206, 0, 77.2963 ) ]
+}
+
+[node name="RaycastLoS" type="Spatial"]
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+mesh = SubResource( 1 )
+material/0 = SubResource( 2 )
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 165, -2.84124e-06 )
+far = 1000.0
+
+[node name="CanvasLayer" parent="Camera" instance=ExtResource( 2 )]
+
+[node name="Agents" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 0 )
+
+[node name="AgentLoS" parent="Agents" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0 )
+
+[node name="AgentLoS2" parent="Agents" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13.8346, 5, 37.863 )
+
+[node name="AgentLoS3" parent="Agents" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 31.3098, 5, 24.3925 )
+
+[node name="AgentLoS4" parent="Agents" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 44.4163, 5, 40.0475 )
+
+[node name="AgentLoS5" parent="Agents" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 59.4163, 5, 25.0475 )
+
+[node name="AgentLoS6" parent="Agents" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 50.6786, 5, -0.0732117 )
+
+[node name="AgentLoS7" parent="Agents" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 69.2461, 5, -1.89355 )
+
+[node name="AgentLoS8" parent="Agents" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 79.2461, 5, 43.1064 )
+
+[node name="AgentLoS9" parent="Agents" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 59.2461, 5, 63.1064 )
+
+[node name="AgentLoS10" parent="Agents" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19.2461, 5, 68.1064 )
+
+[node name="AgentLoS11" parent="Agents" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -50, 5, -20 )
+
+[node name="AgentLoS12" parent="Agents" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -50, 5, 20.7756 )
+
+[node name="AgentLoS13" parent="Agents" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -40, 5, 0.775558 )
+
+[node name="AgentLoS14" parent="Agents" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 5, -14.2244 )
+
+[node name="AgentLoS15" parent="Agents" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 5, -34.2244 )
+
+[node name="AgentLoS16" parent="Agents" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 35, 5, -49.2244 )
+
+[node name="AgentLoS17" parent="Agents" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 5, -64.2244 )
+
+[node name="AgentLoS18" parent="Agents" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -13.9315, 5, -51.8461 )
+
+[node name="AgentLoS19" parent="Agents" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -65.265, 5, -65.6807 )
+
+[node name="AgentLoS20" parent="Agents" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -71.8182, 5, -45.657 )
+
+[node name="AgentLoS21" parent="Agents" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -75.4589, 5, -12.1628 )
+
+[node name="AgentLoS22" parent="Agents" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -75.4589, 5, 12.8372 )
+
+[node name="AgentLoS23" parent="Agents" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -90.4589, 5, 27.8372 )
+
+[node name="AgentLoS24" parent="Agents" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -80.4589, 5, 47.8372 )
+
+[node name="AgentLoS25" parent="Agents" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -65.4589, 5, 72.8372 )
+
+[node name="AgentLoS26" parent="Agents" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -80.4589, 5, 82.8372 )
+
+[node name="AgentLoS27" parent="Agents" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -40.4589, 5, 82.8372 )
+
+[node name="AgentLoS28" parent="Agents" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.458908, 5, 77.8372 )
+
+[node name="AgentLoS29" parent="Agents" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -20.4589, 5, 57.8372 )
+
+[node name="AgentLoS30" parent="Agents" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 49.5411, 5, 82.8372 )
+
+[node name="AgentLoS31" parent="Agents" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 69.5411, 5, -62.1628 )
+
+[node name="AgentLoS32" parent="Agents" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 43.3282, 5, -89.1038 )
+
+[node name="AgentLoS33" parent="Agents" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.08803, 5, -88.0116 )
+
+[node name="AgentLoS34" parent="Agents" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -51.088, 5, -88.0116 )
+
+[node name="AgentLoS35" parent="Agents" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -79.1212, 5, -87.2834 )
+
+[node name="AgentLoS36" parent="Agents" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -34.1212, 5, -72.2834 )
+
+[node name="AgentLoS37" parent="Agents" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 30.8788, 5, -67.2834 )
+
+[node name="AgentLoS38" parent="Agents" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 68.0136, 5, -42.8909 )
+
+[node name="AgentLoS39" parent="Agents" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 81.8482, 5, -82.5743 )
+
+[node name="AgentLoS40" parent="Agents" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 88.0373, 5, -31.6048 )
+
+[node name="AgentLoS41" parent="Agents" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 43.0373, 5, -21.6048 )
+
+[node name="AgentLoS42" parent="Agents" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 53.9594, 5, -15.0516 )
+
+[node name="AgentLoS43" parent="Agents" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 88.9594, 5, 14.9484 )
+
+[node name="AgentLoS44" parent="Agents" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 73.9594, 5, 24.9484 )
+
+[node name="AgentLoS45" parent="Agents" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 83.9594, 5, 64.9484 )
+
+[node name="AgentLoS46" parent="Agents" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 37.3587, 5, 76.2345 )
+
+[node name="AgentLoS47" parent="Agents" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.64128, 5, 56.2345 )
+
+[node name="AgentLoS48" parent="Agents" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -57.6413, 5, 51.2345 )
+
+[node name="AgentLoS49" parent="Agents" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -62.6413, 5, 1.23452 )
+
+[node name="AgentLoS50" parent="Agents" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -90.3104, 5, -6.04683 )
+
+[node name="Walls" type="Spatial" parent="."]
+
+[node name="MeshInstance" type="MeshInstance" parent="Walls"]
+transform = Transform( 1, 0, 0, 0, 3.6, 0, 0, 0, 19.1, 10.1688, 5, -2.40841 )
+mesh = SubResource( 3 )
+material/0 = SubResource( 4 )
+
+[node name="StaticBody" type="StaticBody" parent="Walls/MeshInstance"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Walls/MeshInstance/StaticBody"]
+shape = SubResource( 5 )
+
+[node name="MeshInstance10" type="MeshInstance" parent="Walls"]
+transform = Transform( -4.37114e-08, 0, 137.52, 0, 25.2, 0, -1, 0, -6.01119e-06, 9.16882, 5, -137.408 )
+mesh = SubResource( 3 )
+material/0 = SubResource( 4 )
+
+[node name="StaticBody" type="StaticBody" parent="Walls/MeshInstance10"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Walls/MeshInstance10/StaticBody"]
+shape = SubResource( 5 )
+
+[node name="MeshInstance2" type="MeshInstance" parent="Walls"]
+transform = Transform( 0.953059, 0, 5.78321, 0, 3.6, 0, -0.302786, 0, 18.2034, -31.0417, 5, 1.60561 )
+mesh = SubResource( 3 )
+material/0 = SubResource( 4 )
+
+[node name="StaticBody" type="StaticBody" parent="Walls/MeshInstance2"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Walls/MeshInstance2/StaticBody"]
+shape = SubResource( 5 )
+
+[node name="MeshInstance3" type="MeshInstance" parent="Walls"]
+transform = Transform( 0.213968, 0, -18.6577, 0, 3.6, 0, 0.976841, 0, 4.08679, -31.0417, 5, 74.1254 )
+mesh = SubResource( 3 )
+material/0 = SubResource( 4 )
+
+[node name="StaticBody" type="StaticBody" parent="Walls/MeshInstance3"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Walls/MeshInstance3/StaticBody"]
+shape = SubResource( 5 )
+
+[node name="MeshInstance4" type="MeshInstance" parent="Walls"]
+transform = Transform( 0.213968, 0, -18.6577, 0, 3.6, 0, 0.976841, 0, 4.08679, 61.2805, 5, 17.1265 )
+mesh = SubResource( 3 )
+material/0 = SubResource( 4 )
+
+[node name="StaticBody" type="StaticBody" parent="Walls/MeshInstance4"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Walls/MeshInstance4/StaticBody"]
+shape = SubResource( 5 )
+
+[node name="MeshInstance5" type="MeshInstance" parent="Walls"]
+transform = Transform( 0.213968, 0, -18.6577, 0, 3.6, 0, 0.976841, 0, 4.08679, -50.8441, 5, -42.0133 )
+mesh = SubResource( 3 )
+material/0 = SubResource( 4 )
+
+[node name="StaticBody" type="StaticBody" parent="Walls/MeshInstance5"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Walls/MeshInstance5/StaticBody"]
+shape = SubResource( 5 )
+
+[node name="MeshInstance6" type="MeshInstance" parent="Walls"]
+transform = Transform( 0.890896, 0, 8.67538, 0, 3.6, 0, -0.454208, 0, 17.0161, 16.3234, 5, -81.3516 )
+mesh = SubResource( 3 )
+material/0 = SubResource( 4 )
+
+[node name="StaticBody" type="StaticBody" parent="Walls/MeshInstance6"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Walls/MeshInstance6/StaticBody"]
+shape = SubResource( 5 )
+
+[node name="MeshInstance7" type="MeshInstance" parent="Walls"]
+transform = Transform( 0.890896, 0, 8.67538, 0, 3.6, 0, -0.454208, 0, 17.0161, 64.7591, 5, -31.0426 )
+mesh = SubResource( 3 )
+material/0 = SubResource( 4 )
+
+[node name="StaticBody" type="StaticBody" parent="Walls/MeshInstance7"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Walls/MeshInstance7/StaticBody"]
+shape = SubResource( 5 )
+
+[node name="MeshInstance8" type="MeshInstance" parent="Walls"]
+transform = Transform( 0.885767, 0, 8.8649, 0, 3.6, 0, -0.464131, 0, 16.9181, 50.3086, 5, 70.9132 )
+mesh = SubResource( 3 )
+material/0 = SubResource( 4 )
+
+[node name="StaticBody" type="StaticBody" parent="Walls/MeshInstance8"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Walls/MeshInstance8/StaticBody"]
+shape = SubResource( 5 )
+
+[node name="MeshInstance9" type="MeshInstance" parent="Walls"]
+transform = Transform( -0.354438, 0, 17.86, 0, 3.6, 0, -0.93508, 0, -6.76977, -79.2101, 5, 40.942 )
+mesh = SubResource( 3 )
+material/0 = SubResource( 4 )
+
+[node name="StaticBody" type="StaticBody" parent="Walls/MeshInstance9"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Walls/MeshInstance9/StaticBody"]
+shape = SubResource( 5 )
+
+[node name="VisibleTarget2" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.8571, 132, 5.66403 )
+visible = false
+
+[node name="MeshInstance" type="MeshInstance" parent="VisibleTarget2"]
+transform = Transform( 2.3, 0, 0, 0, -1.00536e-07, 1.61, 0, -2.3, -7.03753e-08, 0, 3, 0 )
+mesh = SubResource( 6 )
+material/0 = SubResource( 7 )
+
+[node name="HiddenTarget3" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.8571, 1, -163.336 )
+visible = false
+
+[node name="MeshInstance" type="MeshInstance" parent="HiddenTarget3"]
+transform = Transform( 2.3, 0, 0, 0, -1.00536e-07, 1.61, 0, -2.3, -7.03753e-08, 0, 3, 0 )
+mesh = SubResource( 6 )
+material/0 = SubResource( 7 )
+
+[node name="Targetbase" type="Spatial" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Targetbase"]
+autoplay = "move"
+anims/move = SubResource( 8 )
+
+[node name="Target" type="Spatial" parent="Targetbase"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.09206, 0, 77.2963 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Targetbase/Target" groups=[
+"target",
+]]
+transform = Transform( 2.3, 0, 0, 0, -1.00536e-07, 1.61, 0, -2.3, -7.03753e-08, 0, 3, 0 )
+mesh = SubResource( 6 )
+material/0 = SubResource( 7 )
