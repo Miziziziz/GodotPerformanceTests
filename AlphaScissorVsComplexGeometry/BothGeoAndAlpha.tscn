@@ -1,10 +1,20 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://AlphaScissorVsComplexGeometry/bracing_alpha_scissor/bracing_alpha_scissor.tscn" type="PackedScene" id=1]
 [ext_resource path="res://AlphaScissorVsComplexGeometry/bracing_complex_geo/bracing_complex_geo.tscn" type="PackedScene" id=2]
 [ext_resource path="res://FPSDisplay.tscn" type="PackedScene" id=3]
 
+[sub_resource type="CubeMesh" id=1]
+size = Vector3( 300, 2, 300 )
+
 [node name="BothGeoAndAlpha" type="Spatial"]
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 75, 35, -45 )
+current = true
+far = 1000.0
+
+[node name="CanvasLayer" parent="Camera" instance=ExtResource( 3 )]
 
 [node name="ComplexGeo" type="Spatial" parent="."]
 
@@ -5552,8 +5562,12 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 0, 16 )
 [node name="Bracing25" parent="AlphaScissor/BigBlock6/Block10" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 0, 32 )
 
-[node name="Camera" type="Camera" parent="AlphaScissor"]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 75, 35, -45 )
-current = true
+[node name="Ground" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -55, 0, -45 )
+mesh = SubResource( 1 )
+material/0 = null
 
-[node name="CanvasLayer" parent="AlphaScissor/Camera" instance=ExtResource( 3 )]
+[node name="DirectionalLight" type="DirectionalLight" parent="Ground"]
+transform = Transform( 0.909476, -0.360056, 0.207879, 0, 0.5, 0.866025, -0.415757, -0.787629, 0.454738, 0, 95, 0 )
+shadow_enabled = true
+directional_shadow_max_distance = 1000.0
