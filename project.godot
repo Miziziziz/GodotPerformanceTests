@@ -1,0 +1,36 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "Spatial",
+"class": "QueueAgent",
+"language": "GDScript",
+"path": "res://Pathfinding/PathfindingAgents/QueueAgent.gd"
+} ]
+_global_script_class_icons={
+"QueueAgent": ""
+}
+
+[application]
+
+config/name="PerformanceTests"
+config/icon="res://icon.png"
+
+[display]
+
+window/vsync/use_vsync=false
+
+[physics]
+
+common/enable_pause_aware_picking=true
+
+[rendering]
+
+environment/default_environment="res://default_env.tres"
