@@ -25,4 +25,4 @@ func _physics_process(delta):
 		MOVE_MODES.MOVE_AND_SLIDE:
 			move_and_slide(velocity, Vector3.UP)
 		MOVE_MODES.MOVE_AND_SLIDE_AND_SNAP:
-			move_and_slide_with_snap(velocity, Vector3.UP, Vector3.DOWN)
+			move_and_slide_with_snap(velocity, Vector3.DOWN, Vector3.UP)
