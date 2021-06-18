@@ -58,3 +58,21 @@ Results on my machine:
 
 **VisionConeDotProdNoSqrt** takes 0.85 ms each frame when can see target, 0.42 ms each frame when can't. Easy to make it 2d as well, which is only 0.65 ms each frame when the agent can see the target
 
+
+## LineOfSightChecks
+Testing the performance cost of doing a bunch of raycasts to check for line of sight. There are 50 agents each doing one raycast per frame.
+
+Results on my machine:
+**RaycastLoS** between ~2400 fps to ~2900 fps. It's lower the more agents the target is behind cover for.
+
+## Movement
+tests comparing move_and_collide, move_and_slide, and move_and_slide_with_snap performance when moving 150 agents simultaneously.
+
+**MoveAndCollide** agents use move_and_collide to move. Get stuck on slopes though.
+**MoveAndSlide** agents use move_and_slide to move.
+**MoveAndSlideWithSnap** agents use move_and_slide_with_snap to move. 
+
+Results on my machine:
+**MoveAndCollide** ~2350 fps
+**MoveAndSlide** ~2250 fps when moving uphill, ~2450 fps when moving downhill
+**MoveAndSlideWithSnap** ~2000 fps when moving uphill, ~2200 fps when moving downhill
