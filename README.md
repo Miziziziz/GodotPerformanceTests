@@ -89,6 +89,7 @@ Performance tests on a custom arm ik system I wrote
 **ArmIKQueue** has 30 characters that send ik update requests to an ik manager that does a fixed number of ik calculations each frame
 
 Results on my machine:
+
 **ArmIKBasic** ~560-600 fps
 
 **ArmIKQueue** 2 calculations per frame(cpf) ~2200 fps, 4 cpf is ~2000 fps, 30 cpf is ~730-780 fps
