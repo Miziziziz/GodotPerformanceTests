@@ -3,9 +3,13 @@ A series of primarily 3d performance tests and experiments in the godot engine.
 To use: just download the project and run the scenes in each folder.
 
 My PC specs:
+
 Windows 10
+
 Ryzen 3700
+
 2060 Geforce
+
 16 gb Ram
 
 ## AlphaScissorVsComplexGeometry
@@ -85,6 +89,7 @@ tests comparing move_and_collide, move_and_slide, and move_and_slide_with_snap p
 **MoveAndSlideWithSnap** agents use move_and_slide_with_snap to move. 
 
 Results on my machine:
+
 **MoveAndCollide** ~2350 fps
 
 **MoveAndSlide** ~2250 fps when moving uphill, ~2450 fps when moving downhill
