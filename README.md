@@ -69,10 +69,26 @@ Results on my machine:
 tests comparing move_and_collide, move_and_slide, and move_and_slide_with_snap performance when moving 150 agents simultaneously.
 
 **MoveAndCollide** agents use move_and_collide to move. Get stuck on slopes though.
+
 **MoveAndSlide** agents use move_and_slide to move.
+
 **MoveAndSlideWithSnap** agents use move_and_slide_with_snap to move. 
 
 Results on my machine:
 **MoveAndCollide** ~2350 fps
+
 **MoveAndSlide** ~2250 fps when moving uphill, ~2450 fps when moving downhill
+
 **MoveAndSlideWithSnap** ~2000 fps when moving uphill, ~2200 fps when moving downhill
+
+## ArmIK
+Performance tests on a custom arm ik system I wrote
+
+**ArmIKBasic** has 30 characters each update their ik twice per frame (once for each arm)
+
+**ArmIKQueue** has 30 characters that send ik update requests to an ik manager that does a fixed number of ik calculations each frame
+
+Results on my machine:
+**ArmIKBasic** ~560-600 fps
+
+**ArmIKQueue** 2 calculations per frame(cpf) ~2200 fps, 4 cpf is ~2000 fps, 30 cpf is ~730-780 fps
