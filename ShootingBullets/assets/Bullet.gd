@@ -18,7 +18,7 @@ func _physics_process(delta):
 	var cur_pos = global_transform.origin
 	
 	var space_state = get_world().get_direct_space_state()
-	var result = space_state.intersect_ray(last_pos, cur_pos, [], 0)
+	var result = space_state.intersect_ray(last_pos, cur_pos, [], 1)
 	if result:
 		$HitEffectSpawner.spawn_hit_effect(result.position, result.normal)
 		hit_something()
