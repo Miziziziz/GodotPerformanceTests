@@ -82,7 +82,7 @@ transform = Transform( 0.814105, 0.37434, -0.443961, 0, 0.764505, 0.644617, 0.58
 
 [node name="Spawner" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -36, 0, -36 )
-item_path = "res://DistanceChecks/stuff/WanderAgentAreaProcess.tscn"
+item_path = "res://DistanceChecks/stuff/WanderAgentAreaDetectArea.tscn"
 x_count = 10
 z_count = 10
 spacing = 8

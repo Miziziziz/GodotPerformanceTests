@@ -2,7 +2,7 @@ extends Spatial
 
 
 var dist_check_manager
-var dist_check_radius = 3
+var dist_check_radius = 4
 
 export var verbose = false
 

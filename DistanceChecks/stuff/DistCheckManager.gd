@@ -1,5 +1,6 @@
 extends Spatial
 
+#custom hash table implementation for distance checks
 
 var agents_to_coord_cache = {}
 var world_cache = {}

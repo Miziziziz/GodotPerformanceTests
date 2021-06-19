@@ -4,7 +4,12 @@ extends Area
 export var use_signals = false
 var cache = {}
 
+var alternate_frames = true
+var a_frame = false
+
 func _ready():
+	a_frame = randi() % 2 == 0
+
 	yield(get_tree(), "idle_frame")
 	if use_signals:
 		connect("body_entered", self, "on_body_enter")
@@ -13,7 +18,7 @@ func _ready():
 		set_process(false)
 
 func _physics_process(delta):
-	if get_overlapping_bodies().size() > 0:
+	if get_overlapping_bodies().size() > 1:
 		$Red.show()
 		$Yellow.hide()
 	else:
