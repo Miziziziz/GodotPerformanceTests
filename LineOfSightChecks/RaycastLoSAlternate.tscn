@@ -58,153 +58,203 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 0 )
 
 [node name="AgentLoS" parent="Agents" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0 )
+alternate_frames = true
 
 [node name="AgentLoS2" parent="Agents" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13.8346, 5, 37.863 )
+alternate_frames = true
 
 [node name="AgentLoS3" parent="Agents" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 31.3098, 5, 24.3925 )
+alternate_frames = true
 
 [node name="AgentLoS4" parent="Agents" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 44.4163, 5, 40.0475 )
+alternate_frames = true
 
 [node name="AgentLoS5" parent="Agents" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 59.4163, 5, 25.0475 )
+alternate_frames = true
 
 [node name="AgentLoS6" parent="Agents" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 50.6786, 5, -0.0732117 )
+alternate_frames = true
 
 [node name="AgentLoS7" parent="Agents" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 69.2461, 5, -1.89355 )
+alternate_frames = true
 
 [node name="AgentLoS8" parent="Agents" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 79.2461, 5, 43.1064 )
+alternate_frames = true
 
 [node name="AgentLoS9" parent="Agents" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 59.2461, 5, 63.1064 )
+alternate_frames = true
 
 [node name="AgentLoS10" parent="Agents" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19.2461, 5, 68.1064 )
+alternate_frames = true
 
 [node name="AgentLoS11" parent="Agents" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -50, 5, -20 )
+alternate_frames = true
 
 [node name="AgentLoS12" parent="Agents" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -50, 5, 20.7756 )
+alternate_frames = true
 
 [node name="AgentLoS13" parent="Agents" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -40, 5, 0.775558 )
+alternate_frames = true
 
 [node name="AgentLoS14" parent="Agents" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 5, -14.2244 )
+alternate_frames = true
 
 [node name="AgentLoS15" parent="Agents" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 5, -34.2244 )
+alternate_frames = true
 
 [node name="AgentLoS16" parent="Agents" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 35, 5, -49.2244 )
+alternate_frames = true
 
 [node name="AgentLoS17" parent="Agents" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 5, -64.2244 )
+alternate_frames = true
 
 [node name="AgentLoS18" parent="Agents" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -13.9315, 5, -51.8461 )
+alternate_frames = true
 
 [node name="AgentLoS19" parent="Agents" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -65.265, 5, -65.6807 )
+alternate_frames = true
 
 [node name="AgentLoS20" parent="Agents" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -71.8182, 5, -45.657 )
+alternate_frames = true
 
 [node name="AgentLoS21" parent="Agents" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -75.4589, 5, -12.1628 )
+alternate_frames = true
 
 [node name="AgentLoS22" parent="Agents" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -75.4589, 5, 12.8372 )
+alternate_frames = true
 
 [node name="AgentLoS23" parent="Agents" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -90.4589, 5, 27.8372 )
+alternate_frames = true
 
 [node name="AgentLoS24" parent="Agents" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -80.4589, 5, 47.8372 )
+alternate_frames = true
 
 [node name="AgentLoS25" parent="Agents" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -65.4589, 5, 72.8372 )
+alternate_frames = true
 
 [node name="AgentLoS26" parent="Agents" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -80.4589, 5, 82.8372 )
+alternate_frames = true
 
 [node name="AgentLoS27" parent="Agents" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -40.4589, 5, 82.8372 )
+alternate_frames = true
 
 [node name="AgentLoS28" parent="Agents" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.458908, 5, 77.8372 )
+alternate_frames = true
 
 [node name="AgentLoS29" parent="Agents" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -20.4589, 5, 57.8372 )
+alternate_frames = true
 
 [node name="AgentLoS30" parent="Agents" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 49.5411, 5, 82.8372 )
+alternate_frames = true
 
 [node name="AgentLoS31" parent="Agents" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 69.5411, 5, -62.1628 )
+alternate_frames = true
 
 [node name="AgentLoS32" parent="Agents" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 43.3282, 5, -89.1038 )
+alternate_frames = true
 
 [node name="AgentLoS33" parent="Agents" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.08803, 5, -88.0116 )
+alternate_frames = true
 
 [node name="AgentLoS34" parent="Agents" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -51.088, 5, -88.0116 )
+alternate_frames = true
 
 [node name="AgentLoS35" parent="Agents" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -79.1212, 5, -87.2834 )
+alternate_frames = true
 
 [node name="AgentLoS36" parent="Agents" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -34.1212, 5, -72.2834 )
+alternate_frames = true
 
 [node name="AgentLoS37" parent="Agents" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 30.8788, 5, -67.2834 )
+alternate_frames = true
 
 [node name="AgentLoS38" parent="Agents" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 68.0136, 5, -42.8909 )
+alternate_frames = true
 
 [node name="AgentLoS39" parent="Agents" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 81.8482, 5, -82.5743 )
+alternate_frames = true
 
 [node name="AgentLoS40" parent="Agents" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 88.0373, 5, -31.6048 )
+alternate_frames = true
 
 [node name="AgentLoS41" parent="Agents" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 43.0373, 5, -21.6048 )
+alternate_frames = true
 
 [node name="AgentLoS42" parent="Agents" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 53.9594, 5, -15.0516 )
+alternate_frames = true
 
 [node name="AgentLoS43" parent="Agents" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 88.9594, 5, 14.9484 )
+alternate_frames = true
 
 [node name="AgentLoS44" parent="Agents" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 73.9594, 5, 24.9484 )
+alternate_frames = true
 
 [node name="AgentLoS45" parent="Agents" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 83.9594, 5, 64.9484 )
+alternate_frames = true
 
 [node name="AgentLoS46" parent="Agents" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 37.3587, 5, 76.2345 )
+alternate_frames = true
 
 [node name="AgentLoS47" parent="Agents" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.64128, 5, 56.2345 )
+alternate_frames = true
 
 [node name="AgentLoS48" parent="Agents" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -57.6413, 5, 51.2345 )
+alternate_frames = true
 
 [node name="AgentLoS49" parent="Agents" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -62.6413, 5, 1.23452 )
+alternate_frames = true
 
 [node name="AgentLoS50" parent="Agents" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -90.3104, 5, -6.04683 )
+alternate_frames = true
 
 [node name="Walls" type="Spatial" parent="."]
 

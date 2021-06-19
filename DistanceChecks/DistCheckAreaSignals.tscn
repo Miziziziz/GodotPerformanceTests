@@ -1,0 +1,484 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://FPSDisplay.tscn" type="PackedScene" id=1]
+[ext_resource path="res://DistanceChecks/stuff/WanderAgent.tscn" type="PackedScene" id=2]
+
+[sub_resource type="CubeMesh" id=1]
+
+[sub_resource type="SpatialMaterial" id=2]
+albedo_color = Color( 0.14902, 0.313726, 0.164706, 1 )
+
+[sub_resource type="CubeMesh" id=3]
+
+[sub_resource type="SpatialMaterial" id=4]
+albedo_color = Color( 0, 0.0862745, 1, 1 )
+
+[sub_resource type="BoxShape" id=5]
+
+[node name="DistCheckBasic" type="Spatial"]
+
+[node name="Environment" type="Spatial" parent="."]
+
+[node name="Floor" type="MeshInstance" parent="Environment"]
+transform = Transform( 40.1, 0, 0, 0, 1, 0, 0, 0, 40.1, 0, 0, 0 )
+mesh = SubResource( 1 )
+material/0 = SubResource( 2 )
+
+[node name="Wall" type="MeshInstance" parent="Environment"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 41.2, -41, 2, 0 )
+mesh = SubResource( 3 )
+material/0 = SubResource( 4 )
+
+[node name="StaticBody" type="StaticBody" parent="Environment/Wall"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Environment/Wall/StaticBody"]
+shape = SubResource( 5 )
+
+[node name="Wall2" type="MeshInstance" parent="Environment"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 41.2, 41, 2, 0 )
+mesh = SubResource( 3 )
+material/0 = SubResource( 4 )
+
+[node name="StaticBody" type="StaticBody" parent="Environment/Wall2"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Environment/Wall2/StaticBody"]
+shape = SubResource( 5 )
+
+[node name="Wall3" type="MeshInstance" parent="Environment"]
+transform = Transform( -4.37114e-08, 0, 41.2, 0, 1, 0, -1, 0, -1.80091e-06, -5.96046e-08, 2, -41 )
+mesh = SubResource( 3 )
+material/0 = SubResource( 4 )
+
+[node name="StaticBody" type="StaticBody" parent="Environment/Wall3"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Environment/Wall3/StaticBody"]
+shape = SubResource( 5 )
+
+[node name="Wall4" type="MeshInstance" parent="Environment"]
+transform = Transform( -4.37114e-08, 0, 41.2, 0, 1, 0, -1, 0, -1.80091e-06, -5.96046e-08, 2, 41 )
+mesh = SubResource( 3 )
+material/0 = SubResource( 4 )
+
+[node name="StaticBody" type="StaticBody" parent="Environment/Wall4"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Environment/Wall4/StaticBody"]
+shape = SubResource( 5 )
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 79, -2.84124e-06 )
+current = true
+far = 1000.0
+
+[node name="CanvasLayer" parent="Camera" instance=ExtResource( 1 )]
+
+[node name="Camera2" type="Camera" parent="."]
+transform = Transform( 1, 0, 0, 0, 0.862434, 0.506169, 0, -0.506169, 0.862434, 0, 79, 75 )
+far = 1000.0
+
+[node name="CanvasLayer" parent="Camera2" instance=ExtResource( 1 )]
+
+[node name="DirectionalLight" type="DirectionalLight" parent="."]
+transform = Transform( 0.814105, 0.37434, -0.443961, 0, 0.764505, 0.644617, 0.580717, -0.524787, 0.622388, 0, 99.3266, 0 )
+
+[node name="Agents" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="WanderAgent" parent="Agents" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -36, 0, -36 )
+dist_check_type = 2
+
+[node name="WanderAgent2" parent="Agents" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -28, 0, -36 )
+dist_check_type = 2
+
+[node name="WanderAgent3" parent="Agents" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, -36 )
+dist_check_type = 2
+
+[node name="WanderAgent4" parent="Agents" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, -36 )
+dist_check_type = 2
+
+[node name="WanderAgent5" parent="Agents" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -36 )
+dist_check_type = 2
+
+[node name="WanderAgent6" parent="Agents" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -36 )
+dist_check_type = 2
+
+[node name="WanderAgent7" parent="Agents" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, -36 )
+dist_check_type = 2
+
+[node name="WanderAgent8" parent="Agents" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, -36 )
+dist_check_type = 2
+
+[node name="WanderAgent9" parent="Agents" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 28, 0, -36 )
+dist_check_type = 2
+
+[node name="WanderAgent10" parent="Agents" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 0, -36 )
+dist_check_type = 2
+
+[node name="WanderAgent11" parent="Agents" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -36, 0, -28 )
+dist_check_type = 2
+
+[node name="WanderAgent12" parent="Agents" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -28, 0, -28 )
+dist_check_type = 2
+
+[node name="WanderAgent13" parent="Agents" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, -28 )
+dist_check_type = 2
+
+[node name="WanderAgent14" parent="Agents" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, -28 )
+dist_check_type = 2
+
+[node name="WanderAgent15" parent="Agents" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -28 )
+dist_check_type = 2
+
+[node name="WanderAgent16" parent="Agents" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -28 )
+dist_check_type = 2
+
+[node name="WanderAgent17" parent="Agents" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, -28 )
+dist_check_type = 2
+
+[node name="WanderAgent18" parent="Agents" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, -28 )
+dist_check_type = 2
+
+[node name="WanderAgent19" parent="Agents" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 28, 0, -28 )
+dist_check_type = 2
+
+[node name="WanderAgent20" parent="Agents" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 0, -28 )
+dist_check_type = 2
+
+[node name="WanderAgent21" parent="Agents" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -36, 0, -20 )
+dist_check_type = 2
+
+[node name="WanderAgent22" parent="Agents" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -28, 0, -20 )
+dist_check_type = 2
+
+[node name="WanderAgent23" parent="Agents" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, -20 )
+dist_check_type = 2
+
+[node name="WanderAgent24" parent="Agents" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, -20 )
+dist_check_type = 2
+
+[node name="WanderAgent25" parent="Agents" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -20 )
+dist_check_type = 2
+
+[node name="WanderAgent26" parent="Agents" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -20 )
+dist_check_type = 2
+
+[node name="WanderAgent27" parent="Agents" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, -20 )
+dist_check_type = 2
+
+[node name="WanderAgent28" parent="Agents" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, -20 )
+dist_check_type = 2
+
+[node name="WanderAgent29" parent="Agents" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 28, 0, -20 )
+dist_check_type = 2
+
+[node name="WanderAgent30" parent="Agents" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 0, -20 )
+dist_check_type = 2
+
+[node name="WanderAgent31" parent="Agents" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -36, 0, -12 )
+dist_check_type = 2
+
+[node name="WanderAgent32" parent="Agents" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -28, 0, -12 )
+dist_check_type = 2
+
+[node name="WanderAgent33" parent="Agents" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, -12 )
+dist_check_type = 2
+
+[node name="WanderAgent34" parent="Agents" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, -12 )
+dist_check_type = 2
+
+[node name="WanderAgent35" parent="Agents" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -12 )
+dist_check_type = 2
+
+[node name="WanderAgent36" parent="Agents" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -12 )
+dist_check_type = 2
+
+[node name="WanderAgent37" parent="Agents" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, -12 )
+dist_check_type = 2
+
+[node name="WanderAgent38" parent="Agents" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, -12 )
+dist_check_type = 2
+
+[node name="WanderAgent39" parent="Agents" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 28, 0, -12 )
+dist_check_type = 2
+
+[node name="WanderAgent40" parent="Agents" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 0, -12 )
+dist_check_type = 2
+
+[node name="WanderAgent41" parent="Agents" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -36, 0, -4 )
+dist_check_type = 2
+
+[node name="WanderAgent42" parent="Agents" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -28, 0, -4 )
+dist_check_type = 2
+
+[node name="WanderAgent43" parent="Agents" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, -4 )
+dist_check_type = 2
+
+[node name="WanderAgent44" parent="Agents" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, -4 )
+dist_check_type = 2
+
+[node name="WanderAgent45" parent="Agents" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -4 )
+dist_check_type = 2
+
+[node name="WanderAgent46" parent="Agents" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -4 )
+dist_check_type = 2
+
+[node name="WanderAgent47" parent="Agents" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, -4 )
+dist_check_type = 2
+
+[node name="WanderAgent48" parent="Agents" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, -4 )
+dist_check_type = 2
+
+[node name="WanderAgent49" parent="Agents" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 28, 0, -4 )
+dist_check_type = 2
+
+[node name="WanderAgent50" parent="Agents" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 0, -4 )
+dist_check_type = 2
+
+[node name="WanderAgent51" parent="Agents" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -36, 0, 4 )
+dist_check_type = 2
+
+[node name="WanderAgent52" parent="Agents" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -28, 0, 4 )
+dist_check_type = 2
+
+[node name="WanderAgent53" parent="Agents" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, 4 )
+dist_check_type = 2
+
+[node name="WanderAgent54" parent="Agents" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, 4 )
+dist_check_type = 2
+
+[node name="WanderAgent55" parent="Agents" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 4 )
+dist_check_type = 2
+
+[node name="WanderAgent56" parent="Agents" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 4 )
+dist_check_type = 2
+
+[node name="WanderAgent57" parent="Agents" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 4 )
+dist_check_type = 2
+
+[node name="WanderAgent58" parent="Agents" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 4 )
+dist_check_type = 2
+
+[node name="WanderAgent59" parent="Agents" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 28, 0, 4 )
+dist_check_type = 2
+
+[node name="WanderAgent60" parent="Agents" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 0, 4 )
+dist_check_type = 2
+
+[node name="WanderAgent61" parent="Agents" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -36, 0, 12 )
+dist_check_type = 2
+
+[node name="WanderAgent62" parent="Agents" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -28, 0, 12 )
+dist_check_type = 2
+
+[node name="WanderAgent63" parent="Agents" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, 12 )
+dist_check_type = 2
+
+[node name="WanderAgent64" parent="Agents" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, 12 )
+dist_check_type = 2
+
+[node name="WanderAgent65" parent="Agents" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 12 )
+dist_check_type = 2
+
+[node name="WanderAgent66" parent="Agents" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 12 )
+dist_check_type = 2
+
+[node name="WanderAgent67" parent="Agents" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 12 )
+dist_check_type = 2
+
+[node name="WanderAgent68" parent="Agents" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 12 )
+dist_check_type = 2
+
+[node name="WanderAgent69" parent="Agents" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 28, 0, 12 )
+dist_check_type = 2
+
+[node name="WanderAgent70" parent="Agents" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 0, 12 )
+dist_check_type = 2
+
+[node name="WanderAgent71" parent="Agents" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -36, 0, 20 )
+dist_check_type = 2
+
+[node name="WanderAgent72" parent="Agents" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -28, 0, 20 )
+dist_check_type = 2
+
+[node name="WanderAgent73" parent="Agents" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, 20 )
+dist_check_type = 2
+
+[node name="WanderAgent74" parent="Agents" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, 20 )
+dist_check_type = 2
+
+[node name="WanderAgent75" parent="Agents" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 20 )
+dist_check_type = 2
+
+[node name="WanderAgent76" parent="Agents" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 20 )
+dist_check_type = 2
+
+[node name="WanderAgent77" parent="Agents" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 20 )
+dist_check_type = 2
+
+[node name="WanderAgent78" parent="Agents" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 20 )
+dist_check_type = 2
+
+[node name="WanderAgent79" parent="Agents" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 28, 0, 20 )
+dist_check_type = 2
+
+[node name="WanderAgent80" parent="Agents" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 0, 20 )
+dist_check_type = 2
+
+[node name="WanderAgent81" parent="Agents" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -36, 0, 28 )
+dist_check_type = 2
+
+[node name="WanderAgent82" parent="Agents" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -28, 0, 28 )
+dist_check_type = 2
+
+[node name="WanderAgent83" parent="Agents" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, 28 )
+dist_check_type = 2
+
+[node name="WanderAgent84" parent="Agents" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, 28 )
+dist_check_type = 2
+
+[node name="WanderAgent85" parent="Agents" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 28 )
+dist_check_type = 2
+
+[node name="WanderAgent86" parent="Agents" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 28 )
+dist_check_type = 2
+
+[node name="WanderAgent87" parent="Agents" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 28 )
+dist_check_type = 2
+
+[node name="WanderAgent88" parent="Agents" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 28 )
+dist_check_type = 2
+
+[node name="WanderAgent89" parent="Agents" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 28, 0, 28 )
+dist_check_type = 2
+
+[node name="WanderAgent90" parent="Agents" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 0, 28 )
+dist_check_type = 2
+
+[node name="WanderAgent91" parent="Agents" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -36, 0, 36 )
+dist_check_type = 2
+
+[node name="WanderAgent92" parent="Agents" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -28, 0, 36 )
+dist_check_type = 2
+
+[node name="WanderAgent93" parent="Agents" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, 36 )
+dist_check_type = 2
+
+[node name="WanderAgent94" parent="Agents" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, 36 )
+dist_check_type = 2
+
+[node name="WanderAgent95" parent="Agents" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 36 )
+dist_check_type = 2
+
+[node name="WanderAgent96" parent="Agents" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 36 )
+dist_check_type = 2
+
+[node name="WanderAgent97" parent="Agents" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 36 )
+dist_check_type = 2
+
+[node name="WanderAgent98" parent="Agents" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 36 )
+dist_check_type = 2
+
+[node name="WanderAgent99" parent="Agents" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 28, 0, 36 )
+dist_check_type = 2
+
+[node name="WanderAgent100" parent="Agents" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 0, 36 )
+dist_check_type = 2
