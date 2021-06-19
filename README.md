@@ -2,6 +2,12 @@
 A series of primarily 3d performance tests and experiments in the godot engine.
 To use: just download the project and run the scenes in each folder.
 
+My PC specs:
+Windows 10
+Ryzen 3700
+2060 Geforce
+16 gb Ram
+
 ## AlphaScissorVsComplexGeometry
 
 Tests performance difference between having models with a transparent texture and AlphaScissor set on their material vs having an identical looking but opaque model with more complex geometry.
