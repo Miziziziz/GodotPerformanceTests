@@ -10,6 +10,8 @@ Tests performance difference between having models with a transparent texture an
 
 **ComplexGeo** scene has complex models with a default material
 
+**ComplexGeoTwoMats** scene has complex models with two differet default materials
+
 **BothGeoAndAlpha** has half of each of the above scenes
 
 
@@ -18,6 +20,8 @@ Results on my machine:
 **AlphaScissor** scene has ~400 fps
 
 **ComplexGeo** scene has ~420 fps
+
+**ComplexGeoTwoMats** scene has ~360 fps
 
 **BothGeoAndAlpha** has ~180 fps
 
