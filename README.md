@@ -1,14 +1,16 @@
 # Godot Performance Experiments And Tests
 A series of primarily 3d performance tests and experiments in the godot engine.
+Full thread with videos and stuff: https://twitter.com/miziziziz/status/1406065809139679232
 To use: just download the project and run the scenes in each folder.
+
 
 My PC specs:
 
 Windows 10
 
-Ryzen 3700
+Ryzen 3700x
 
-2060 Geforce
+Nvidia Geforce 2060  rtx
 
 16 gb Ram
 
@@ -108,6 +110,48 @@ Results on my machine:
 **ArmIKBasic** ~560-600 fps
 
 **ArmIKQueue** 2 calculations per frame(cpf) ~2200 fps, 4 cpf is ~2000 fps, 30 cpf is ~730-780 fps
+
+## DistanceChecks
+100 agents wander around randomly and turn red when within 4 units of another agent.
+
+**DistCheckBasic.tscn** No optimization, every single agent calls get_distance_squared once for every other agent
+
+**DistCheckAreaProcess.tscn** every agent has an Area node and calls get_overlapping_bodies every frame
+
+**DistCheckAreaDetectAreaProcess.tscn** same as above but using get_overlapping_areas instead
+
+**DistCheckAreaSignals.tscn** every agent has an Area node and uses the body_entered and body_exited signals to determine if there are others nearby
+
+**DistCheckHashTable.tscn** custom hashtable implementation thing written in gdscript using dictionaries. 
+
+**DistCheckQuery.tscn** uses intersect_shape() to get nearest objects
+
+Results on my machine:
+
+**DistCheckBasic.tscn** 220-240 fps
+
+**DistCheckAreaProcess.tscn** 1600 fps, but Physics Time is ~6 ms in profiler, so you get large spikes every physics frame, looks like the calculations for get_overlapping_bodies are done every physics frame whether you call the method or not.
+
+**DistCheckAreaDetectAreaProcess.tscn** Same as previous
+
+**DistCheckAreaSignals.tscn** Same as previous
+
+**DistCheckHashTable.tscn** 230-250 fps, probably would be a lot better in C#
+
+**DistCheckQuery.tscn** in  \_physics_process it's 2500fps, but you get a 1ms spike on each physics frame.
+Done in \_process it's smooth 900 fps. Also it's possible to do time slicing with this technique.
+
+## ShootingBullets
+Object pooling tests where a bunch of bullets are shot at a wall. 
+
+**ShootBulletsBasic.tscn** bullets are instanced as they are shot, and queue_free() when they collide. Same with the spark hit effects.
+
+**ShootBulletsPooling.tscn** bullets and hit effects come from object pools.
+
+Results on my machine:
+
+performance was completely identical in both scenes. All performance impact came from doing bullet collision.
+
 
 ## Font
 
