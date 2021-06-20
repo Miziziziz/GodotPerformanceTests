@@ -21,6 +21,7 @@ _global_script_class_icons={
 [application]
 
 config/name="PerformanceTests"
+run/main_scene="res://BatchTester/BatchTester.tscn"
 config/icon="res://icon.png"
 
 [display]

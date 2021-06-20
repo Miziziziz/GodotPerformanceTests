@@ -17,4 +17,4 @@ func fire():
 	var bullet_inst = bullet_obj.instance()
 	bullet_inst.global_transform = global_transform
 	bullet_inst.connect("hit_something", bullet_inst, "queue_free")
-	get_tree().get_root().add_child(bullet_inst)
+	get_parent().add_child(bullet_inst)
