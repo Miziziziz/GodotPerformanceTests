@@ -17,5 +17,5 @@ func _process(delta):
 func fire():
 	var bullet_inst = bullet_pool.get_bullet()
 	bullet_inst.global_transform = global_transform
-	get_tree().get_root().add_child(bullet_inst)
+	get_parent().add_child(bullet_inst)
 	bullet_inst.init()

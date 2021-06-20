@@ -1,0 +1,215 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://BatchTester/BatchTester.gd" type="Script" id=1]
+
+[node name="BatchTester" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/margin_right = 20
+custom_constants/margin_top = 20
+custom_constants/margin_left = 20
+custom_constants/margin_bottom = 20
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer"]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 1004.0
+margin_bottom = 580.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer2"]
+margin_right = 984.0
+margin_bottom = 66.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer2/VBoxContainer"]
+margin_right = 984.0
+margin_bottom = 20.0
+alignment = 1
+
+[node name="TestOptionButton" type="OptionButton" parent="MarginContainer/VBoxContainer2/VBoxContainer/HBoxContainer"]
+margin_left = 355.0
+margin_right = 485.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 130, 0 )
+text = "DistanceChecks"
+clip_text = true
+items = [ "DistanceChecks", null, false, 0, null, "LineOfSightChecks", null, false, 1, null, "Pathfinding", null, false, 2, null, "Movement", null, false, 3, null, "VisionCone", null, false, 4, null, "ShootingBullets", null, false, 5, null, "AlphaScissorVsComplexGeometry", null, false, 6, null, "ArmIK", null, false, 7, null ]
+selected = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StartButton" type="Button" parent="MarginContainer/VBoxContainer2/VBoxContainer/HBoxContainer"]
+margin_left = 489.0
+margin_right = 568.0
+margin_bottom = 20.0
+text = "Start Tests"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StopButton" type="Button" parent="MarginContainer/VBoxContainer2/VBoxContainer/HBoxContainer"]
+visible = false
+margin_left = 523.0
+margin_right = 601.0
+margin_bottom = 20.0
+text = "Stop Tests"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NextButton" type="Button" parent="MarginContainer/VBoxContainer2/VBoxContainer/HBoxContainer"]
+visible = false
+margin_left = 564.0
+margin_right = 637.0
+margin_bottom = 20.0
+text = "Next Test"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RunAllButton" type="Button" parent="MarginContainer/VBoxContainer2/VBoxContainer/HBoxContainer"]
+margin_left = 572.0
+margin_right = 629.0
+margin_bottom = 20.0
+text = "Run All"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer2/VBoxContainer"]
+margin_top = 24.0
+margin_right = 984.0
+margin_bottom = 48.0
+alignment = 1
+
+[node name="TimeLabel" type="Label" parent="MarginContainer/VBoxContainer2/VBoxContainer/HBoxContainer2"]
+margin_left = 397.0
+margin_top = 5.0
+margin_right = 508.0
+margin_bottom = 19.0
+text = "Seconds per test:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TimeSpinBox" type="SpinBox" parent="MarginContainer/VBoxContainer2/VBoxContainer/HBoxContainer2"]
+margin_left = 512.0
+margin_right = 586.0
+margin_bottom = 24.0
+min_value = 2.0
+max_value = 5.0
+step = 0.5
+value = 2.0
+allow_greater = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Progress" type="Control" parent="MarginContainer/VBoxContainer2/VBoxContainer"]
+visible = false
+margin_top = 52.0
+margin_right = 984.0
+margin_bottom = 72.0
+rect_min_size = Vector2( 0, 20 )
+
+[node name="TestProgressBar" type="ProgressBar" parent="MarginContainer/VBoxContainer2/VBoxContainer/Progress"]
+anchor_left = 0.2
+anchor_right = 0.8
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CurrentTestLabel" type="Label" parent="MarginContainer/VBoxContainer2/VBoxContainer"]
+margin_top = 52.0
+margin_right = 984.0
+margin_bottom = 66.0
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.52
+text = "Current Test:"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer2"]
+margin_top = 70.0
+margin_right = 984.0
+margin_bottom = 560.0
+size_flags_vertical = 3
+
+[node name="ViewportContainer" type="ViewportContainer" parent="MarginContainer/VBoxContainer2/MarginContainer"]
+margin_right = 984.0
+margin_bottom = 490.0
+stretch = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Viewport" type="Viewport" parent="MarginContainer/VBoxContainer2/MarginContainer/ViewportContainer"]
+size = Vector2( 984, 490 )
+handle_input_locally = false
+render_target_update_mode = 3
+
+[node name="ResultTree" type="Tree" parent="MarginContainer/VBoxContainer2/MarginContainer"]
+margin_right = 984.0
+margin_bottom = 490.0
+columns = 2
+hide_root = true
+
+[node name="CopyResultsButton" type="Button" parent="MarginContainer/VBoxContainer2/MarginContainer/ResultTree"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -292.255
+margin_top = -33.4166
+margin_right = -136.255
+margin_bottom = -13.4166
+text = "Copy Result Markdown"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CopyCSVButton" type="Button" parent="MarginContainer/VBoxContainer2/MarginContainer/ResultTree"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -128.265
+margin_top = -33.4166
+margin_right = -14.2649
+margin_bottom = -13.4166
+text = "Copy Result CSV"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NextTestTimer" type="Timer" parent="."]
+
+[node name="GetFPSTimer" type="Timer" parent="."]
+wait_time = 0.2
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer2/VBoxContainer/HBoxContainer/StartButton" to="." method="_on_StartButton_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer2/VBoxContainer/HBoxContainer/StopButton" to="." method="_on_StopButton_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer2/VBoxContainer/HBoxContainer/NextButton" to="." method="_on_NextButton_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer2/VBoxContainer/HBoxContainer/RunAllButton" to="." method="_on_RunAllButton_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer2/MarginContainer/ResultTree/CopyResultsButton" to="." method="_on_CopyResultsButton_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer2/MarginContainer/ResultTree/CopyCSVButton" to="." method="_on_CopyCSVButton_pressed"]
+[connection signal="timeout" from="NextTestTimer" to="." method="_on_NextTestTimer_timeout"]
+[connection signal="timeout" from="GetFPSTimer" to="." method="_on_GetFPSTimer_timeout"]

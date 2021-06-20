@@ -15,7 +15,7 @@ func spawn_hit_effect(pos: Vector3, normal: Vector3):
 	else:
 		hit_effect_inst = hit_effect_pool.get_hit_effect()
 	hit_effect_inst.global_transform = get_transform_from_hit_data(pos, normal)
-	get_tree().get_root().add_child(hit_effect_inst)
+	get_parent().get_parent().add_child(hit_effect_inst)
 	hit_effect_inst.init()
 
 func get_transform_from_hit_data(pos: Vector3, dir: Vector3):
