@@ -2,7 +2,7 @@
 
 [ext_resource path="res://ArmIK/assets/IKQueueCharacter.tscn" type="PackedScene" id=1]
 [ext_resource path="res://FPSDisplay.tscn" type="PackedScene" id=2]
-[ext_resource path="res://ArmIK/assets/IKManager.gd" type="Script" id=3]
+[ext_resource path="res://ArmIK/assets/IKManagerPriorityQueue.gd" type="Script" id=3]
 
 [node name="ArmIKBasic" type="Spatial"]
 
@@ -107,4 +107,3 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, -10 )
 "ik_manager",
 ]]
 script = ExtResource( 3 )
-ik_calculations_per_frame = 30
