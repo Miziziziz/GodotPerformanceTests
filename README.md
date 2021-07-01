@@ -1,9 +1,14 @@
 # Godot Performance Experiments And Tests
+
 A series of primarily 3d performance tests and experiments in the godot engine.
 
 Full thread with videos and stuff: https://twitter.com/miziziziz/status/1406065809139679232
 
-To use: just download the project and run the scenes in each folder.
+To use: just download and run the project, select a test and click "Start Test".
+
+You can also run all tests back-to-back and configure the time each test is run.
+
+The results will be displayed in a table after the tests are finished.
 
 
 My PC specs:
